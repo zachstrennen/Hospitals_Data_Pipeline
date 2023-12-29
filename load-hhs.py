@@ -24,7 +24,7 @@ hospital_geo = hospital_geo.drop_duplicates(subset=["hospital_pk"])
 
 # Connect to SQL
 conn = psycopg2.connect(
-    host="pinniped.postgres.database.azure.com", dbname=credentials.get_db(),
+    host=credentials.get_hostname(), dbname=credentials.get_db(),
     user=credentials.get_username(), password=credentials.get_password()
 )
 cur = conn.cursor()

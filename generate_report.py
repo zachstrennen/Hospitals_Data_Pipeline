@@ -14,7 +14,7 @@ end_date = sys.argv[2]
 
 # Connect to server
 conn = psycopg2.connect(
-    host="pinniped.postgres.database.azure.com", dbname=credentials.get_db(),
+    host=credentials.get_hostname(), dbname=credentials.get_db(),
     user=credentials.get_username(), password=credentials.get_password()
 )
 cur = conn.cursor()
